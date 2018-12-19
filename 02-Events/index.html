@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue Events</title>
+
+</head>
+<body>
+
+    <h1>Vue Basics</h1>
+    <div id="app">
+        <h2>{{ title }}</h2>
+        <p>I earn {{ wage }} € per hour</p>
+        <!-- On click, execute the X function -->
+        <button v-on:click="changeWage(1)">Increase wage by 1€</button>
+        <button v-on:click="changeWage(-1)">Increase wage by 1€</button>
+        <!-- On double-click, execute the X function -->
+        <button v-on:dblclick="changeWage(5)">Increase wage by 5€</button>
+        <button v-on:dblclick="changeWage(-5)">Increase wage by 5€</button>
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+    
+</body>
+</html>
