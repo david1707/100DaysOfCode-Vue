@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Vue Events</title>
-    <style>
-    .canvas {
-        width: 300px;
-        height: 300px;
-        margin-top: 20px;
-        background: #ddd;
-    }
-    </style>
+    <title>Vue Basics</title>
 </head>
+
 <body>
 
     <h1>Vue Basics</h1>
     <div id="app">
         <h2>{{ title }}</h2>
-        <button @click.alt="logMessage">Click me!</button>
-        <button @click.shift="logMessage">Shift me!</button>
-        <a href="http://www.google.com" @click="logMessage">Google</a>
+        <ul>
+            <li v-for="item in items">{{ item }} </li>
+        </ul>
+        <div v-for="(ninja, index) in ninjas">
+            <p>Ninja: #{{ index + 1 }}</p>
+            <p>Name: {{ ninja.name }}</p>
+            <p>Age: {{ ninja.age }}</p>
+            <p>Belt colour: {{ ninja.belt }}</p>
+            <hr>
+        </div>
     </div>
 
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="app.js"></script>
-    
+
 </body>
+
 </html>
