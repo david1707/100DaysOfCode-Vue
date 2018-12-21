@@ -5,3 +5,4 @@
 - Lifecycle hooks
 - Getting requests with axios
 - Filters
+- Computed properties
