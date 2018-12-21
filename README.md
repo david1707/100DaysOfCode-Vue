@@ -6,3 +6,4 @@
 - Getting requests with axios
 - Filters
 - Computed properties
+- Vue Router
