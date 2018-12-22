@@ -10,9 +10,10 @@
                 <label for="add-ingredients">Add an ingredient:</label>
                 <input type="text" name="add-ingredients" @keydown.tab.prevent="addIngredient" v-model="another">
             </div>
-            <div v-for="(ing, index) in ingredients" :key="index">
+            <div v-for="(ing, index) in ingredients" :key="index" class="field">
                 <label for="ingredient">Ingredient {{ index + 1 }}</label>
                 <input type="text" name="ingredient" v-model="ingredients[index]">
+                <i class="material-icons delete" @click="deleteIng(ing)">delete</i>
             </div>
             <div class="field center-align mt-4">
                 <p v-if="feedback" class="red-text">{{ feedback }} </p>
@@ -44,7 +45,6 @@ export default {
                     remove: /[$*_+~.()'"!\-;@]/g,
                     lower: true,
                 });
-                 console.log(this.slug);
                 db.collection('smoothies').add({
                     title: this.title,
                     ingredients: this.ingredients,
@@ -63,6 +63,9 @@ export default {
             } else {
                 this.feedback = 'You must enter a value to add an ingredient';
             }
+        },
+        deleteIng(ing){
+            this.ingredients = this.ingredients.filter(ingredient => ingredient != ing );
         }
     }
 }
@@ -80,9 +83,19 @@ export default {
 }
 .add-smoothie .field {
     margin: 20px auto;
+    position: relative;
 }
 button {
     margin-top: 10px;
+    position: relative;
+}
+.add-smoothie .delete {
+    position: absolute;
+    right: 0;
+    bottom: 16px;
+    color: #aaa;
+    font-size: 1.4em;
+    cursor: pointer;
 }
 </style>
 
