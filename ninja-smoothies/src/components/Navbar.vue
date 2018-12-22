@@ -1,11 +1,11 @@
 <template>
     <div class="navbar">
         <nav class="nav-extended indigo darken-2">
-            <div class="nav-content">
+            <div class="nav-content center-align">
                 <router-link :to="{ name: 'Index' }">
-                    <span class="nav-title">Ninja Smoothies</span>
+                    <span class="nav-title">Smooth Criminal</span>
                 </router-link>
-                <a href="" class="btn-floating btn-large halfway-fab pink">
+                <a href="" class="btn-floating btn-large halfway-fab purple">
                     <router-link :to="{ name: 'AddSmoothie' }">
                         <i class="material-icons">add</i>
                     </router-link>

@@ -1,4 +1,4 @@
-# ninja-smoothies
+# Smooth Criminal
 
 > A Vue.js project
 

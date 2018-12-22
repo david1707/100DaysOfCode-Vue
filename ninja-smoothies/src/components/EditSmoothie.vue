@@ -17,7 +17,7 @@
         </div>
         <div class="field center-align mt-4">
             <p v-if="feedback" class="red-text">{{ feedback }} </p>
-            <button class="btn pink">Add Smoothie</button>
+            <button class="btn purple">Add Smoothie</button>
         </div>
     </form>
     </div>
