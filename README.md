@@ -1,6 +1,8 @@
-### Day 05 lessons
+### Day 06
 
-- Real-time-chat with Vue and Firebase
+- Realtime Google Maps with Vue and Firebase
+- Navigation Guards
+- Auth with Firebase
 
 ## How to use it
 
