@@ -1,5 +1,4 @@
-### Day 06
+### Day 07
 
-- Realtime Google Maps with Vue and Firebase
-- Navigation Guards
-- Auth with Firebase
+- Firebase Cloud Functions (Creating and calling functions)
+- ES6 Arrow Functions, Promises, Exports and Imports, Filter method
