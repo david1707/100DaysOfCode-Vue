@@ -1,6 +1,7 @@
 new Vue({
     el: '#app',
     data: {
+        playerName: 'Player',
         playerHealth: 100,
         monsterHealth: 100,
         gameIsRunning: false,
@@ -76,5 +77,8 @@ new Vue({
                 text,
             });
         }
+    },
+    created: function() {
+        this.playerName = prompt('Please, enter your name', 'Player');
     }
 })
