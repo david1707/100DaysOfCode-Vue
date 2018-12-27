@@ -35,8 +35,18 @@
     margin: 5px;
 }
 
-.log ul .player-turn {
+.log ul .player-attack {
     color: blue;
+    background-color: #e4e8ff;
+}
+
+.log ul .player-special {
+    color: white;
+    background-image: linear-gradient(to bottom right, red, yellow);
+}
+
+.log ul .player-heal {
+    color: rgb(28, 189, 63);
     background-color: #e4e8ff;
 }
 

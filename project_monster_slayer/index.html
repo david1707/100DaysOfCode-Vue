@@ -45,7 +45,7 @@
                 <ul>
                     <li 
                         v-for="turn in turns"
-                        :class="{'player-turn': turn.isPlayer, 'monster-turn': turn.isPlayer == false}">
+                        :class="{'player-attack': turn.action == 'Attack', 'monster-turn': turn.action == 'Monster', 'player-special': turn.action == 'Special', 'player-heal': turn.action == 'Heal'}">
                         {{ turn.text }}
                     </li>
                 </ul>
