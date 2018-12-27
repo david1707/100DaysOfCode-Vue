@@ -16,10 +16,7 @@ new Vue({
         attack(){
             var damage = this.calculateDamage(3, 10);
             this.monsterHealth -= damage;
-            this.turns.unshift({
-                action: 'Attack',
-                text: `Player hits Monster for ${damage} HP`
-            });
+            this.addTurn('Attack',  `Player hits Monster for ${damage} HP`);
             if (this.checkWin()) {
                 return;
             }
@@ -29,10 +26,7 @@ new Vue({
         specialAttack(){
             var damage = this.calculateDamage(10, 20);
             this.monsterHealth -= damage;
-            this.turns.unshift({
-                action: 'Special',
-                text: `Player hits Monster hard for ${damage} HP`
-            });
+            this.addTurn('Special', `Player hits Monster hard for ${damage} HP`);
             if (this.checkWin()) {
                 return;
             }
@@ -40,10 +34,7 @@ new Vue({
         },
         heal(){
             this.playerHealth <= 90 ? this.playerHealth += 10 : this.playerHealth = 100;
-            this.turns.unshift({
-                action: 'Heal',
-                text: `Player heals for 10 HP`
-            });
+            this.addTurn('Heal', `Player heals for 10 HP`);
             this.monsterAttacks();
         },
         giveUp(){
@@ -53,10 +44,7 @@ new Vue({
             var damage = this.calculateDamage(5, 12)
             this.playerHealth -= damage;
             this.checkWin();
-            this.turns.unshift({
-                action: 'Monster',
-                text: `Monster hits Player  ${damage} HP`
-            });
+            this.addTurn('Monster', `Monster hits Player  ${damage} HP`);
         },
         calculateDamage(min, max) {
             return Math.max(Math.floor(Math.random() * max) + 1, min)
@@ -78,7 +66,15 @@ new Vue({
                 return true;
             }
             return false;
+        },
+        addTurn(action, text) {
+            if(this.turns.length >= 10) {
+                this.turns.pop();
+            }
+            this.turns.unshift({
+                action,
+                text,
+            });
         }
     }
-
 })

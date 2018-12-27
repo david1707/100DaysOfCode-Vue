@@ -41,7 +41,8 @@
             </div>
         </section>
         <section class="row log" v-if="turns.length > 0">
-            <div class="small-12 columns">
+            <h2>Last {{ turns.length }} turns</h2>
+            <div class="text-center small-12 columns">
                 <ul>
                     <li 
                         v-for="turn in turns"
