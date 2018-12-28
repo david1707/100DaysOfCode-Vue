@@ -1,7 +1,9 @@
-### Day 09
+### Day 10
 
-- Dynamic Styling CSS
-- Conditionals, Loops & Lists
-- Reading docs
-- Project
-- Assignments
+- Vue-cli
+- Components
+- Scoped CSS
+- Communication between components
+- Slots
+- Exercises
+- Documentation
