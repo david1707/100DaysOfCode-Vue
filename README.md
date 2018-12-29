@@ -1,9 +1,5 @@
-### Day 10
+### Day 11
 
-- Vue-cli
-- Components
-- Scoped CSS
-- Communication between components
-- Slots
+- Forms
 - Exercises
 - Documentation
