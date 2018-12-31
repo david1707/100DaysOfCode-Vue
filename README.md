@@ -1,5 +1,5 @@
-### Day 12
+### Day 13
 
-- Animations
-- Transitions
+- Router
+- State Manager (Vuex)
 - Documentation
