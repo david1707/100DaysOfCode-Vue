@@ -1,5 +1,3 @@
-### Day 13
+### Day 14
 
-- Router
-- State Manager (Vuex)
-- Documentation
+- Final project
