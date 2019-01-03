@@ -1,5 +1,3 @@
-### Day 15
+### Day 16
 
-- Axios
-- Auth
-- Docs
+- Form validation with Vuelidate
