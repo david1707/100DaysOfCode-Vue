@@ -1,5 +1,4 @@
-### Day 16
+### Day 17
 
-- Form validation with Vuelidate
-- Vue Cli
+- Vuex
 - Documentation
