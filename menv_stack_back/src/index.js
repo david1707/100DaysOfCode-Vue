@@ -1,6 +1,10 @@
 const express = require('express');
-const app = express();
 const morgan = require('morgan');
+const mongoose = require('mongoose')
+
+const app = express();
+mongoose.connect('mongodb://localhost/mevn-db')
+    .then(db => console.log('Database connected'))
 
 // Settings
 app.set('port', process.env.PORT || 3000)
@@ -10,7 +14,7 @@ app.use(morgan('dev'))
 app.use(express.json());
 
 // Routes
-
+app.use('/tasks', require('./routes/tasks.js'));
 
 // Static files
 app.use(express.static(__dirname + '/public'))
