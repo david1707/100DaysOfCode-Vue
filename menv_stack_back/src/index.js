@@ -1,8 +1,10 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const morgan = require('morgan');
-const mongoose = require('mongoose')
+const cors = require('cors')
 
 const app = express();
+
 mongoose.connect('mongodb://localhost/mevn-db')
     .then(db => console.log('Database connected'))
 
@@ -12,6 +14,7 @@ app.set('port', process.env.PORT || 3000)
 // Middlewares
 app.use(morgan('dev'))
 app.use(express.json());
+app.use(cors())
 
 // Routes
 app.use('/tasks', require('./routes/tasks.js'));
