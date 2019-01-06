@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>List Task</h2>
-    <ul class="collapsible">
+    <ul class="collapsible col s10 offset-s1">
       <li v-for="task in tasks" :key="task._id">
         <div class="collapsible-header"><i class="material-icons">play_arrow</i>{{ task.title }}</div>
         <div class="collapsible-body"><span>{{ task.description }}</span></div>

@@ -1,3 +1,4 @@
-### Day 18
+### Day 19
 
-- Creating a To-Do list with the MEVN stack
+- Vuetify
+- Documentation
