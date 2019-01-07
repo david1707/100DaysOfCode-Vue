@@ -1,4 +1,2 @@
-### Day 19
-
-- Vuetify
-- Documentation
+### Day 20
+- Node
