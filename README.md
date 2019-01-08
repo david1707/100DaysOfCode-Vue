@@ -1,2 +1,3 @@
-### Day 20
-- Node
+### Day 21
+- Project with Vue, Vuetify and Firebase
+- Documentation
