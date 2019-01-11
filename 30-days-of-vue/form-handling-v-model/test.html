@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://unpkg.com/bulma/css/bulma.css" />
+</head>
+<body>
+    
+    <div id="app">
+        <div class="field">
+            <label for="" class="label">Name</label>
+            <input 
+                type="text"
+                class="input"
+                placeholder="Text input"
+                v-model="name">
+        </div>
+
+        <div class="field">
+            <lable class="label">Subject</lable>
+            <div class="select">
+                <select v-model="subject">
+                    <option disabled value="">Select Dropdown</option>
+                    <option>Engineering</option>
+                    <option>Computer Science</option>
+                    <option>Biology</option>
+                    <option>Other...</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="field">
+            <label class="checkbox">
+                <input type="checkbox" v-model="termsAndConditions">
+                I agree to the terms and conditions
+            </label>
+        </div>
+
+        <div class="field">
+            <label class="radio">
+                <input type="radio" value="Yes" v-model="yesOrNo"> Yes
+            </label>
+            <label class="radio">
+                <input type="radio" value="No" v-model="yesOrNo"> No
+            </label>
+        </div>
+
+        <div class="field">
+            <button class="button is-info" @click="submit">Submit </button>
+        </div>
+      </div>
+
+    <script src="https://unpkg.com/vue"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/lodash/lodash.js">
+    </script>
+    <script src="test.js"></script>
+
+</body>
+</html>
