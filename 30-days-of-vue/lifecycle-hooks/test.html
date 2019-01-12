@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,27 +8,35 @@
     <title>Document</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    
-    <div id="app">
-        <h2>{{ greeting }}</h2>
-        <p>{{alertMessage}}</p>
-        <button 
-            v-on:click="changeGreeting">
-            Change Greeting
-        </button>
-        <button
-            v-on:dblclick="changeGreeting">
-            Double click to change greeting
-        </button>
-        <input v-on:keyup="alertMessageGreeting"
-            placeholder="Type something" />
-        <input v-on:keyup.enter="alertEnterGreeting"
-            placeholder="Type and release Enter" />
-    </div>
 
+<body>
+
+    <div id="app">
+        <div class="card" >
+            <header class="card-header">
+                <p class="card-header-title">
+                    {{name}}
+                </p>
+            </header>
+            <div class="card-content">
+                <div class="content">
+                    <p>{{company.name}}</p>
+                    <p>"{{company.catchPhrase}}"</p>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <a href="#" class="card-footer-item">
+                    {{email}}
+                </a>
+            </footer>
+        </div>
+    </div>
     <script src="https://unpkg.com/vue"></script>
+    <script 
+        src="https://unpkg.com/axios/dist/axios.min.js">
+    </script>
     <script src="test.js"></script>
 
 </body>
+
 </html>

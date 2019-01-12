@@ -1,19 +1,34 @@
 var app = new Vue({
     el: '#app',
     data: {
-        greeting: 'Hello World!',
-        alertMessage: '',
-    },
-    methods: {
-        changeGreeting() {
-            this.greeting = this.greeting === 'Hello World!' ? 'What is up' : 'Hello World!';
-            console.log(this.$data);
-        },
-        alertMessageGreeting() {
-            this.alertMessage = 'You typed something!';
-        },
-        alertEnterGreeting() {
-            this.alertMessage = 'You typed something!';
+        name: 'Loading...',
+        email: 'Loading...',
+        company: {
+          name: 'Loading...',
+          catchPhrase: 'Loading...',
         }
     },
+    created() {
+        axios.get('https://jsonplaceholder.typicode.com/users')
+            .then( response => {
+                const data = response.data;
+                const randomUser = response.data[
+                    Math.floor(Math.random() * data.length)
+                ];
+
+                this.name = randomUser.name;
+                this.email = randomUser.email;
+                this.company.name = randomUser.company.name;
+                this.company.catchPhrase = randomUser.company.catchPhrase;
+            })
+    },
+    // mounted() {
+    //     console.log(this.$el);
+    // }
+    updated() {
+        console.log(this.$el);
+    },
+    destroyed() {
+        
+    }
 })
