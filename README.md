@@ -1,2 +1,2 @@
-### Day 35
-- Todo app
+### Day 40
+- Simple ToDo
