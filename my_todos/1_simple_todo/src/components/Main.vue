@@ -32,8 +32,6 @@
             </p>
           </div>
         </div><!-- ./Show Todos -->
-        
-        <!--- Filtrar todos per fet, no fet, tots -->
       </div>
   </div>
 </template>
