@@ -1,2 +1,2 @@
-### Day 40
-- Simple ToDo
+### Day 41
+- 2 Components ToDo ($emit and props)
