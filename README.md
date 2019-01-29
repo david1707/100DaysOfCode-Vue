@@ -1,2 +1,2 @@
-### Day 41
-- 2 Components ToDo ($emit and props)
+### Day 42
+- 2 Components ToDo (eventBus)
