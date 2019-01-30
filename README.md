@@ -1,2 +1,2 @@
-### Day 42
-- 2 Components ToDo (eventBus)
+### Day 43
+- 2 Components ToDo (Vuex)
