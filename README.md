@@ -1,2 +1,3 @@
-### Day 43
-- 2 Components ToDo (Vuex)
+### Day 44
+- Vuetify
+- Vue Cli
