@@ -1,2 +1,4 @@
-### Day 43
-- 2 Components ToDo (Vuex)
+### Day 47
+- Starting Animal Shelter SPA project
+- Created Navbar (needs to be fixed)
+- Created all Views + added the router link address
