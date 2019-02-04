@@ -1,20 +1,22 @@
 <template>
   <div id="app">
-    <nav>
-      <div class="nav-wrapper">  
-        <a href="#" class="brand-logo right">Animal Shelter Logo</a>
-        <ul class="left hide-on-med-and-down">
-          <li><router-link to="/">Home</router-link></li>
-          <li><router-link to="/adopt">Adopt</router-link></li>
-          <li><router-link to="/events">Events</router-link></li>
-          <li><router-link to="/help-us">Help Us</router-link></li>
-          <li><router-link to="/volunteering">Volunteering</router-link></li>
-          <li><router-link to="/blog">Blog</router-link></li>
-          <li><router-link to="/about">About</router-link></li>
-        </ul>
-      </div>
-    </nav>
-    <router-view/>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">  
+          <a href="#" class="brand-logo right">Animal Shelter Logo</a>
+          <ul class="left hide-on-med-and-down">
+            <li><router-link to="/">Home</router-link></li>
+            <li><router-link to="/adopt">Adopt</router-link></li>
+            <li><router-link to="/events">Events</router-link></li>
+            <li><router-link to="/help-us">Help Us</router-link></li>
+            <li><router-link to="/volunteering">Volunteering</router-link></li>
+            <li><router-link to="/blog">Blog</router-link></li>
+            <li><router-link to="/about">About</router-link></li>
+          </ul>
+        </div>
+      </nav>
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -27,4 +29,15 @@ export default {
 
 
 <style lang="scss">
+  nav {
+    background-color: rgba(175, 65, 193, 0.4);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 5;
+  }
+
+  a:hover {
+    font-size: 115%;
+  }
 </style>
