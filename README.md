@@ -1,5 +1,5 @@
 ### Day 48
-- Created all Views + added the router link address
+- Started working with Volunteering view, 90% done.
 
 ### TODO
 - Fix navbar for mobile phones
