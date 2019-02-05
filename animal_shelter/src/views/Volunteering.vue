@@ -42,7 +42,6 @@
       <div class="row">
         <h3>Join us and help us to help!</h3>  
         <br>
-        {{ $v.first_name }}
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6" :class="{ invalid_value: $v.first_name.$error }">
@@ -61,10 +60,10 @@
               <vuejsDatepicker v-model="birthdate" :monday-first="true"></vuejsDatepicker>
               <label class="active" >Birthdate</label>
             </div>
-            <div class="input-field col s6" :class="{ invalid_value: $v.last_name.$error }">
+            <div class="input-field col s6" :class="{ invalid_value: $v.email.$error }">
               <input id="email" type="email" class="validate"  @input="$v.email.$touch()" v-model="email">
               <label for="email">Email</label>
-              <p v-if="$v.email.$error"><i> Please, provide a valid last email</i></p>
+              <p v-if="$v.email.$error"><i> Please, provide a valid email</i></p>
             </div>
           </div>
           <div class="row">
