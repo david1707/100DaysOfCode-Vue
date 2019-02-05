@@ -1,6 +1,6 @@
 <template>
   <div class="volunteering">
-    <img src="https://c.pxhere.com/photos/0f/1f/cat_thai_cat_cats_pet_animals_cute_cat_s_eye_cat_eyes-703574.jpg!d" alt="">
+    <img src="https://c.pxhere.com/photos/d7/d9/dogs_kids_children_seecanyon-242466.jpg!d" alt="">
 
     <!-- First block of text -->
     <div class="container">
@@ -24,7 +24,7 @@
       </div>
     </div><!-- ./First block of text -->
 
-    <img src="https://c.pxhere.com/photos/d7/d9/dogs_kids_children_seecanyon-242466.jpg!d" alt="">
+    <img src="https://c.pxhere.com/photos/0f/1f/cat_thai_cat_cats_pet_animals_cute_cat_s_eye_cat_eyes-703574.jpg!d" alt="">
 
     <div class="container">
       <div class="row">
@@ -45,23 +45,32 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6">
-              <input id="first_name" type="text" class="validate">
+              <input id="first_name" type="text" class="validate" v-model="first_name">
               <label for="first_name">First Name</label>
             </div>
             <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate">
+              <input id="last_name" type="text" class="validate" v-model="last_name">
               <label for="last_name">Last Name</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
-              <input id="birthdate" type="text" class="datepicker">
-              <label for="birthdate">Birthdate</label>
+              <vuejsDatepicker v-model="birthdate" :monday-first="true"></vuejsDatepicker>
+              <label v-if="birthdate == null" for="birthdate">Birthdate</label>
             </div>
             <div class="input-field col s6">
-              <input id="email" type="email" class="validate">
+              <input id="email" type="email" class="validate" v-model="email">
               <label for="email">Email</label>
             </div>
+          </div>
+          <div class="row">
+            <button 
+              class="btn waves-effect waves-light col s10 offset-s1"
+              type="submit"
+              name="action"
+              @click.prevent="send">Submit
+              <i class="material-icons right">send</i>
+            </button>
           </div>
         </form>
       </div>
@@ -72,8 +81,30 @@
 </template>
 
 <script>
+import Datepicker from 'vuejs-datepicker';
+
 export default {
   name: 'volunteering',
+  data() {
+    return {
+      first_name: null,
+      last_name: null,
+      birthdate: null,
+      email: null,
+    }
+  },
+  components: {
+    vuejsDatepicker: Datepicker
+  },
+  methods: {
+    send() {
+      console.log('ok')
+    }
+  },
+  created() {
+    let today = new Date();
+    this.birthdate = today.setFullYear(today.getFullYear() - 30);
+  }
 }
 </script>
 

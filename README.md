@@ -1,7 +1,7 @@
-### Day 48
-- Started working with Volunteering view, 90% done.
+### Day 49
+- Added visual Datepicker to volunteering
+- Finished Volunteering view
 
 ### TODO
 - Fix navbar for mobile phones
 - Fix 100vh images
-- Add Datepicker to Volunteeering https://www.npmjs.com/package/vuejs-datepicker
