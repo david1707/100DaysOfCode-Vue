@@ -42,25 +42,29 @@
       <div class="row">
         <h3>Join us and help us to help!</h3>  
         <br>
+        {{ $v.first_name }}
         <form class="col s12">
           <div class="row">
-            <div class="input-field col s6">
-              <input id="first_name" type="text" class="validate" v-model="first_name">
+            <div class="input-field col s6" :class="{ invalid_value: $v.first_name.$error }">
+              <input id="first_name" type="text" class="validate" @input="$v.first_name.$touch()" v-model="first_name">
               <label for="first_name">First Name</label>
+              <p v-if="$v.first_name.$error"><i> Please, provide a valid first name</i></p>
             </div>
-            <div class="input-field col s6">
-              <input id="last_name" type="text" class="validate" v-model="last_name">
+            <div class="input-field col s6" :class="{ invalid_value: $v.last_name.$error }">
+              <input id="last_name" type="text" class="validate" @input="$v.last_name.$touch()" v-model="last_name">
               <label for="last_name">Last Name</label>
+              <p v-if="$v.last_name.$error"><i> Please, provide a valid last name</i></p>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s6">
               <vuejsDatepicker v-model="birthdate" :monday-first="true"></vuejsDatepicker>
-              <label v-if="birthdate == null" for="birthdate">Birthdate</label>
+              <label class="active" >Birthdate</label>
             </div>
-            <div class="input-field col s6">
-              <input id="email" type="email" class="validate" v-model="email">
+            <div class="input-field col s6" :class="{ invalid_value: $v.last_name.$error }">
+              <input id="email" type="email" class="validate"  @input="$v.email.$touch()" v-model="email">
               <label for="email">Email</label>
+              <p v-if="$v.email.$error"><i> Please, provide a valid last email</i></p>
             </div>
           </div>
           <div class="row">
@@ -82,6 +86,7 @@
 
 <script>
 import Datepicker from 'vuejs-datepicker';
+import { required, minLength } from 'vuelidate/lib/validators'
 
 export default {
   name: 'volunteering',
@@ -95,6 +100,20 @@ export default {
   },
   components: {
     vuejsDatepicker: Datepicker
+  },
+  validations: {
+    first_name: {
+      required,
+      minLength: minLength(2)
+    },
+    last_name: {
+      required,
+      minLength: minLength(2)
+    },
+    email: {
+      required,
+      minLength: minLength(10)
+    }
   },
   methods: {
     send() {
@@ -121,5 +140,10 @@ export default {
       border: 0px;
     }
   }
+
+  .invalid_value label {
+    color: red;
+  }
+
 </style>
 
