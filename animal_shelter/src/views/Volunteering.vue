@@ -1,7 +1,8 @@
 <template>
   <div class="volunteering">
-    <img src="https://c.pxhere.com/photos/d7/d9/dogs_kids_children_seecanyon-242466.jpg!d" alt="">
-
+    <div>
+      <img src="https://c.pxhere.com/photos/d7/d9/dogs_kids_children_seecanyon-242466.jpg!d" alt="">
+    </div>
     <!-- First block of text -->
     <div class="container">
       <div class="row">
@@ -45,12 +46,14 @@
         <form class="col s12">
           <div class="row">
             <div class="input-field col s6" :class="{ invalid_value: $v.first_name.$error }">
-              <input id="first_name" type="text" class="validate" @input="$v.first_name.$touch()" v-model="first_name">
+              <i class="material-icons prefix">person</i>
+              <input id="first_name" type="text" class="validate" @blur="$v.first_name.$touch()" v-model="first_name">
               <label for="first_name">First Name</label>
               <p v-if="$v.first_name.$error"><i> Please, provide a valid first name</i></p>
             </div>
             <div class="input-field col s6" :class="{ invalid_value: $v.last_name.$error }">
-              <input id="last_name" type="text" class="validate" @input="$v.last_name.$touch()" v-model="last_name">
+              <i class="material-icons prefix">person</i>
+              <input id="last_name" type="text" class="validate" @blur="$v.last_name.$touch()" v-model="last_name">
               <label for="last_name">Last Name</label>
               <p v-if="$v.last_name.$error"><i> Please, provide a valid last name</i></p>
             </div>
@@ -61,9 +64,17 @@
               <label class="active" >Birthdate</label>
             </div>
             <div class="input-field col s6" :class="{ invalid_value: $v.email.$error }">
-              <input id="email" type="email" class="validate"  @input="$v.email.$touch()" v-model="email">
+              <i class="material-icons prefix">email</i>
+              <input id="email" type="email" class="validate" @blur="$v.email.$touch()" v-model="email">
               <label for="email">Email</label>
               <p v-if="$v.email.$error"><i> Please, provide a valid email</i></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <i class="material-icons prefix">comment</i>
+              <textarea id="textarea1" class="materialize-textarea" v-model="comments"></textarea>
+              <label for="textarea1">Comments</label>
             </div>
           </div>
           <div class="row">
@@ -71,6 +82,7 @@
               class="btn waves-effect waves-light col s10 offset-s1"
               type="submit"
               name="action"
+              :disabled="$v.$invalid"
               @click.prevent="send">Submit
               <i class="material-icons right">send</i>
             </button>
@@ -95,6 +107,7 @@ export default {
       last_name: null,
       birthdate: null,
       email: null,
+      comments: null,
     }
   },
   components: {
@@ -116,7 +129,9 @@ export default {
   },
   methods: {
     send() {
-      console.log('ok')
+      let d = new Date(this.birthdate);
+      let date_birthdate = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
+      console.log(`Email sent:\n${this.first_name} ${this.last_name} born in ${date_birthdate} requested help about how to volunteer.\nComments: ${this.comments}\nContact at: ${this.email}`)
     }
   },
   created() {
@@ -127,7 +142,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .volunteering > img {
+  div > div > img {
     width: 100vw;
     height: 99vh;
   }
@@ -140,7 +155,7 @@ export default {
     }
   }
 
-  .invalid_value label {
+  .invalid_value, .invalid_value label {
     color: red;
   }
 
