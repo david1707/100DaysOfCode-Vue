@@ -91,7 +91,6 @@
       </div>
     </div><!-- ./First block of text -->
 
-
   </div>
 </template>
 
@@ -132,6 +131,13 @@ export default {
       let d = new Date(this.birthdate);
       let date_birthdate = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
       console.log(`Email sent:\n${this.first_name} ${this.last_name} born in ${date_birthdate} requested help about how to volunteer.\nComments: ${this.comments}\nContact at: ${this.email}`)
+      this.$toasted.show(`Thanks ${this.first_name} ${this.last_name}! We will contact you at ${this.email}!`, { 
+        theme: "bubble", 
+        position: "top-right", 
+        duration : 5000000,
+        icon: 'markunread_mailbox',
+        fullWidth: 'true'
+      });
     }
   },
   created() {
@@ -157,6 +163,10 @@ export default {
 
   .invalid_value, .invalid_value label {
     color: red;
+  }
+
+  .toasted.bubble {
+    background-color: #2bbbad !important;
   }
 
 </style>

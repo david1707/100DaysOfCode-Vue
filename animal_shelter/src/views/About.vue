@@ -32,7 +32,7 @@
       </div>
       <div class="row">
         <h3>Where we are:</h3>
-
+        <h1>TODO: Finish this part</h1>
       </div>
       <div class="row"></div>
     </div>

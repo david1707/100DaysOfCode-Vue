@@ -4,8 +4,10 @@ import router from './router'
 import store from './store'
 
 import Vuelidate from 'vuelidate'
+import Toasted from 'vue-toasted';
 
-Vue.use(Vuelidate)
+Vue.use(Vuelidate);
+Vue.use(Toasted)
 
 Vue.config.productionTip = false
 
