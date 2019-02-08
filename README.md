@@ -1,8 +1,9 @@
-### Day 51
-- Added a toast to give the user a visual confirmation
+### Day 52
+- Added Google Maps at About.vue
+- Added connect with us section at About.vue
 
 ### TODO
 - Afegir text a la imatge inicial d'encapçalament de About
-- Add Google Maps address: https://developers.google.com/maps/documentation/javascript/adding-a-google-map
+- Afegir lo d'emailing amb mailchimp
 - Fix navbar for mobile phones
 
