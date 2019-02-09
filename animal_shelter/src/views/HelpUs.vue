@@ -18,8 +18,12 @@
         <p>Lorem ipsum dolor sit amet consectetur adipisicing!</p>
       </div>
       <div class="row"> 
-        <h4>Shelter home</h4>
+        <h4>Shelter house</h4>
         <p>Do you have a farm? A big place at the outskirts of town where our pets may roam freely?</p>
+        <p>Abandon pets raised outdoors have a better time to adapt when they're adopted. And you can have a lot of fun too!</p>
+        <div>
+          <h1>CONTACT FORM HERE</h1>
+        </div>
       </div>
     </div><!-- ./Container -->
     <div class="row">

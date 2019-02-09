@@ -1,7 +1,9 @@
 ### Day 53
 - Added an email listing (mailchimp) pop up
+- HelpUs section started
 
 ### TODO
-- Afegir text a la imatge inicial d'encapçalament de About
+- Create a contact form component and add it to Volunteering and helpus
+- Add text to the first image on each section
 - Fix navbar for mobile phones
 
