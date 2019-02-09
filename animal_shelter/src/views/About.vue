@@ -57,10 +57,13 @@
           <li class="collection"><i class="material-icons teal-text">people</i> <a :href="youtube"> Youtube</a> </li>
         </ul>
       </div>
+
+      
     </div>
   </div>
 </template>
 
+<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"47af5050e3dab92ac25ec9e7e","lid":"024665302f","uniqueMethods":true}) })</script>
 <script>
 import {gmapApi} from 'vue2-google-maps'
 

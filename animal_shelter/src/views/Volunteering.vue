@@ -149,8 +149,8 @@ export default {
 
 <style lang="scss">
   div > div > img {
-    width: 100vw;
-    height: 99vh;
+    width: 99.1vw;
+    height: 99.1vh;
   }
 
   ul.collection {

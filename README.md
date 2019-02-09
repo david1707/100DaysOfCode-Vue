@@ -1,9 +1,7 @@
-### Day 52
-- Added Google Maps at About.vue
-- Added connect with us section at About.vue
+### Day 53
+- Added an email listing (mailchimp) pop up
 
 ### TODO
 - Afegir text a la imatge inicial d'encapçalament de About
-- Afegir lo d'emailing amb mailchimp
 - Fix navbar for mobile phones
 

@@ -3,8 +3,8 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">  
-          <a href="#" class="brand-logo right">Animal Shelter Logo</a>
-          <ul class="left hide-on-med-and-down">
+          <a href="#" class="brand-logo left">Animal Shelter Logo</a>
+          <ul class="right hide-on-med-and-down">
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/adopt">Adopt</router-link></li>
             <li><router-link to="/events">Events</router-link></li>
@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss">
   nav {
-    background-color: rgba(175, 65, 193, 0.4);
+    background-color: #009688;
     position: absolute;
     left: 0px;
     top: 0px;
