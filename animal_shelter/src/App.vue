@@ -3,7 +3,7 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper">  
-          <a href="#" class="brand-logo left">Animal Shelter Logo</a>
+          <a href="#" class="brand-logo left">Shelter Name logo</a>
           <ul class="right hide-on-med-and-down">
             <li><router-link to="/">Home</router-link></li>
             <li><router-link to="/adopt">Adopt</router-link></li>
@@ -39,5 +39,10 @@ export default {
 
   a:hover {
     font-size: 115%;
+  }
+
+  .full-image {
+    height: 100vh;
+    width: 99.1vw;
   }
 </style>

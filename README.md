@@ -1,9 +1,10 @@
-### Day 53
-- Added an email listing (mailchimp) pop up
-- HelpUs section started
+### Day 54
+- Created a contact form component and replaced the old forms with the component
+- Created a Google Maps component and replace the old maps with the component
+- Finished Help Us section
 
 ### TODO
-- Create a contact form component and add it to Volunteering and helpus
 - Add text to the first image on each section
 - Fix navbar for mobile phones
+- Modify CSS Grid on affiliated for mobile phones
 

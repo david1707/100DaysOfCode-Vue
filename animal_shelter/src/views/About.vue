@@ -1,7 +1,7 @@
 <template>
   <div class="about-us">
     <div>
-      <img src="https://c.pxhere.com/photos/74/ea/greece_dog_sleep_tired_hot_santorini-1021532.jpg!d" alt="">
+      <img class="full-image" src="https://c.pxhere.com/photos/74/ea/greece_dog_sleep_tired_hot_santorini-1021532.jpg!d" alt="">
     </div>
     <div class="container">
       <!-- What we do -->
@@ -57,8 +57,6 @@
           <li class="collection"><i class="material-icons teal-text">people</i> <a :href="youtube"> Youtube</a> </li>
         </ul>
       </div>
-
-      
     </div>
   </div>
 </template>
@@ -88,11 +86,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .about-us > div > img {
-    width: 100vw;
-    height: 99vh;
-  }
-
   .row > ul > li {
     padding: 0.5em;
   }
