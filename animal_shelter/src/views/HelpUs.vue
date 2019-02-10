@@ -7,8 +7,8 @@
     <!-- Container -->
     <div class="container">
       <div class="row">
-        <h2>Ways to help our community to grow</h2>
-        <p>There are a lot of ways you can help our little community to grow!</p>
+        <h2>Ways to help our community grow</h2>
+        <p>There are a lot of ways you can help our little community grow!</p>
       </div>
       <div class="row">
         <h4><router-link to="/volunteering">Volunteering</router-link></h4>
@@ -51,9 +51,9 @@
       <div class="row">
         <h4>Donating</h4>
         <p>Do you have toys your pet don't use anymore? Do you want to give away food? Or maybe your dog outgrown the bed where he sleep since he was a puppy</p>
-        <p>We are happy to accept anything you give us.</p>
-        <p>Come, we are waiting you:</p>
-        
+        <p>We are happy to accept anything you want to give us.</p>
+        <p>Come, we are waiting for you:</p>
+        <google-maps-location></google-maps-location>
       </div>
       <div class="row"> 
         <h4>Shelter house</h4>
@@ -61,18 +61,26 @@
         <p>Abandon pets raised outdoors have a better time to adapt when they're adopted. And you can have a lot of fun too!</p>
         <contact-form pre_comment="I have a shelter home and I want to help"></contact-form>
       </div>
+      <div class="row">
+        <h4>...anything else!</h4>
+        <p>If you want to collaborate with us, or you have an idea we may be interested in, or if you want to contact with us, you can do it</p>
+        <social-links></social-links>
+      </div>
     </div>
-
   </div>
 </template>
 
 <script>
 import ContactForm from '../components/ContactForm'
+import GoogleMaps from '../components/GoogleMaps'
+import SocialLinks from '../components/SocialLinks.vue';
 
 export default {
   name: 'help-us',
   components: {
-    'contact-form': ContactForm
+    'contact-form': ContactForm,
+    'google-maps-location': GoogleMaps,
+    'social-links': SocialLinks,
   }
 }
 </script>

@@ -37,50 +37,27 @@
       <div class="row">
         <h3>Where we are:</h3>
         <br>
-        <GmapMap
-          :center="{lat:39.4880541, lng:-0.3577675}"
-          :zoom="12"
-          map-type-id="terrain"
-          style="width: 100%; height: 30vh">
-          <GmapMarker :position="google && new google.maps.LatLng(lat, lng)"/></GmapMap>
-          <br>
+        <google-maps-location></google-maps-location>
       </div>
       <!-- Contact info -->
       <div class="row">
         <h3>Connect with us:</h3>
         <br>
-        <ul class="collection">
-          <li class="collection"><i class="material-icons teal-text">phone</i> Phone number: {{ phone }}</li>
-          <li class="collection"><i class="material-icons teal-text">email</i> Email: {{ email }}</li>
-          <li class="collection"><i class="material-icons teal-text">people</i> <a :href="facebook"> Facebook</a> </li>
-          <li class="collection"><i class="material-icons teal-text">people</i> <a :href="twitter"> Twitter</a> </li>
-          <li class="collection"><i class="material-icons teal-text">people</i> <a :href="youtube"> Youtube</a> </li>
-        </ul>
+        <social-links></social-links>
       </div>
     </div>
   </div>
 </template>
-
-<script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us20.list-manage.com","uuid":"47af5050e3dab92ac25ec9e7e","lid":"024665302f","uniqueMethods":true}) })</script>
 <script>
-import {gmapApi} from 'vue2-google-maps'
+import GoogleMaps from '../components/GoogleMaps'
+import SocialLinks from "../components/SocialLinks.vue";
 
 export default {
   name: 'about-us',
-  data() {
-    return {
-      reactive: true,
-      lat: 39.4880541,
-      lng: -0.3577675,
-      phone: '984-151-121',
-      email: 'sample@email.com',
-      facebook: 'https://www.facebook.com/your_address',
-      twitter: 'https://www.twitter.com/your_handle',
-      youtube: 'https://www.youtube.com/your_channel',
-    }
-  },
-  computed: {
-    google: gmapApi
+
+  components: {
+    'google-maps-location': GoogleMaps,
+    'social-links': SocialLinks,
   }
 }
 </script>
@@ -88,14 +65,6 @@ export default {
 <style lang="scss" scoped>
   .row > ul > li {
     padding: 0.5em;
-  }
-
-  .collection {
-    margin: 0;
-
-    li {
-      padding: 1em !important;
-    }
   }
 
   a:hover {
