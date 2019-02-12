@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import Admin from './views/Admin.vue'
 import Home from './views/Home.vue'
 import About from './views/About.vue'
 import Adopt from './views/Adopt.vue'
@@ -44,11 +45,15 @@ export default new Router({
       name: 'blog',
       component: Blog
     },
-
     {
       path: '/about',
       name: 'about',
       component: About
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: Admin
     }
   ]
 })

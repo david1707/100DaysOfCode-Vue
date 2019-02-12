@@ -22,6 +22,16 @@
 
 <script>
 
+import router from '@/router.js'
+
+var frase = [];
+window.addEventListener("keypress", function(e) {
+    if (frase.length >= 5) { frase.splice(0, 1) }
+    frase.push(String.fromCharCode(e.keyCode));
+    
+    if (frase.join('') == "admin") router.push( "admin" )
+});
+
 export default {
   
 }
