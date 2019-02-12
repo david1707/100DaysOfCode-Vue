@@ -1,5 +1,6 @@
 ### Day 56
 - Added admin secret component
+- Starting adding login with Firebase
 
 ### TODO
 - Fix navbar for mobile phones
