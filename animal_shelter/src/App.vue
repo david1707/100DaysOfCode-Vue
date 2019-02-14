@@ -24,12 +24,18 @@
 
 import router from '@/router.js'
 
+// Checks if 'admin' is writen in any part of the web app
 var frase = [];
 window.addEventListener("keypress", function(e) {
-    if (frase.length >= 5) { frase.splice(0, 1) }
+    if (frase.length >= 5) { 
+      frase.splice(0, 1);
+    }
+
     frase.push(String.fromCharCode(e.keyCode));
     
-    if (frase.join('') == "admin") router.push( "admin" )
+    if (frase.join('') == "admin") {
+      router.push( "login" );
+    }
 });
 
 export default {
@@ -53,6 +59,6 @@ export default {
 
   .full-image {
     height: 100vh;
-    width: 99.1vw;
+    width: 98.96vw;
   }
 </style>
