@@ -25,15 +25,15 @@
 import router from '@/router.js'
 
 // Checks if 'admin' is writen in any part of the web app
-var frase = [];
+var phrase = [];
 window.addEventListener("keypress", function(e) {
-    if (frase.length >= 5) { 
-      frase.splice(0, 1);
+    if (phrase.length >= 5) { 
+      phrase.splice(0, 1);
     }
 
-    frase.push(String.fromCharCode(e.keyCode));
+    phrase.push(String.fromCharCode(e.keyCode));
     
-    if (frase.join('') == "admin") {
+    if (phrase.join('') == "admin") {
       router.push( "login" );
     }
 });

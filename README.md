@@ -1,6 +1,4 @@
-### Day 57
-- Created Login and login functionality
-- Created AdminPanel
+### Day 62
 
 ### TODO
 - Learn how to protect routes to kick out non logged users
