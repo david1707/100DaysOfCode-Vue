@@ -91,7 +91,7 @@ export default {
       this.$toasted.show(`Thanks ${this.first_name} ${this.last_name}! We will contact you at ${this.email}!`, { 
         theme: "bubble", 
         position: "top-right", 
-        duration : 5000000,
+        duration: 5000,
         icon: 'markunread_mailbox',
         fullWidth: 'true'
       });

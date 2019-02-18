@@ -10,7 +10,7 @@
       <div class="field">
         <label for="password">Password:</label>
         <input type="password" :class="{ error: $v.password.$error }" class="validate" @blur="$v.password.$touch()" name="password" v-model="password">
-        <p v-if="$v.password.$error"><i> Please, provide a password email</i></p>
+        <p v-if="$v.password.$error"><i> Please, provide a valid password</i></p>
       </div>
       <div class="field center">
         <button class="btn waves-effect waves-light col s10 offset-s1" :disabled="$v.$invalid">Login</button>
@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-import firebase from 'firebase';
+import database from '@/firebase/init'
 import router from '@/router.js'
 import { required, minLength } from 'vuelidate/lib/validators'
 
@@ -42,21 +42,20 @@ export default {
     }
   },
   methods: {
-    login() {
-      firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        .then( user => {
-          console.log(user);
-          router.push( "admin" )
-        })
-        .catch( () => {
-          this.$toasted.show(`Error: Wrong email or password`, { 
-            theme: "bubble", 
-            position: "top-right", 
-            duration: 5000,
-            icon: 'markunread_mailbox',
-            fullWidth: 'true'
-          });
+    async login() {
+      let result = await database.signUp(this.email, this.password);
+
+      if (result.message) {
+        this.$toasted.show(`Error: Wrong email or password`, { 
+          theme: "bubble", 
+          position: "top-right", 
+          duration: 5000,
+          icon: 'markunread_mailbox',
+          fullWidth: 'true'
         });
+      } else {
+        router.push("admin");
+      }
     }
   }
 
