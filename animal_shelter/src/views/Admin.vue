@@ -6,19 +6,19 @@
             </div>
             <div class="row">
                 <div class="col s4 center-align">
-                    <a class="waves-effect waves-light btn-large "><i class="material-icons left">event</i>Manage events</a>
+                    <router-link to="/admin/events" class="waves-effect waves-light btn-large "><i class="material-icons left">event</i>Manage events</router-link>
                     <div class="events display">
                         <h3>0 Events</h3>
                     </div>
                 </div>
                 <div class="col s4 center-align">
-                    <a class="waves-effect waves-light btn-large"><i class="material-icons left">pets</i>Manage pets</a>
+                    <router-link to="/admin/pets" class="waves-effect waves-light btn-large "><i class="material-icons left">pets</i>Manage pets</router-link>
                     <div class="pets display">
                         <h3>12 Pets</h3>
                     </div>
                 </div>
                 <div class="col s4 center-align">
-                    <a class="waves-effect waves-light btn-large"><i class="material-icons left">library_books</i>Manage blog</a>
+                    <router-link to="/admin/blog" class="waves-effect waves-light btn-large "><i class="material-icons left">library_books</i>Manage blog</router-link>
                     <div class="blog display">
                         <h3>7 Entries</h3>
                     </div>
@@ -30,8 +30,7 @@
 
 <script>
 export default {
-    
-
+    name: 'admin'
 }
 </script>
 
@@ -60,6 +59,4 @@ export default {
             background: rgb(196, 32, 32);
         }
     }
-
-
 </style>

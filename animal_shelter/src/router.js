@@ -10,6 +10,12 @@ import Event from './views/Event.vue'
 import HelpUs from './views/HelpUs.vue'
 import Volunteering from './views/Volunteering.vue'
 
+import AdminEvent from './views/admin/AdminEvent.vue'
+import AdminPets from './views/admin/AdminPets.vue'
+import AdminBlog from './views/admin/AdminBlog.vue'
+
+import firebase from './firebase/init'
+
 Vue.use(Router)
 
 export default new Router({
@@ -54,12 +60,64 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
-      component: Login
+      component: Login,
     },
+    // Admin routes
     {
       path: '/admin',
       name: 'admin',
-      component: Admin
+      component: Admin,
+      beforeEnter: (to, from, next) => {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            next()
+          } else {
+            next(false);
+          }
+        })
+      }
+    },
+    {
+      path: '/admin/events',
+      name: 'admin-events',
+      component: AdminEvent,
+      beforeEnter: (to, from, next) => {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            next()
+          } else {
+            next(false);
+          }
+        })
+      }
+    },
+    {
+      path: '/admin/pets',
+      name: 'admin-pets',
+      component: AdminPets,
+      beforeEnter: (to, from, next) => {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            next()
+          } else {
+            next(false);
+          }
+        })
+      }
+    },
+    {
+      path: '/admin/blog',
+      name: 'admin-blog',
+      component: AdminBlog,
+      beforeEnter: (to, from, next) => {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            next()
+          } else {
+            next(false);
+          }
+        })
+      }
     }
   ]
 })

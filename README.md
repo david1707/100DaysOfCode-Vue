@@ -1,9 +1,10 @@
-### Day 62
-- Added validation on Login
-- Once you log in, fetch Firebase data from current use and add it to Vuex
+### Day 63
+- Protected admin routes with Guard
+- Created the Admin sections of Admin Event, Pets and Blog
+- Admin Events almost done, only the actions are left
+- Fixed bug capturing keys from Firefox
 
 ### TODO
-- Learn how to protect routes to kick out non logged users
 - Fix navbar for mobile phones
 - Modify CSS Grid on affiliated for mobile phones
 
