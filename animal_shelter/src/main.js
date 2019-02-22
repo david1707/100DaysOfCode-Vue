@@ -6,7 +6,6 @@ import store from './store'
 import Vuelidate from 'vuelidate'
 import Toasted from 'vue-toasted'
 import * as VueGoogleMaps from 'vue2-google-maps'
-import '@/firebase/init.js'
 
 Vue.use(Vuelidate);
 Vue.use(Toasted);

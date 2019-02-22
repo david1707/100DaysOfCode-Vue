@@ -19,8 +19,7 @@
   </div>
 </template>
 <script>
-import database from '@/firebase/init'
-import router from '@/router.js'
+// import router from '@/router.js'
 import { required, minLength } from 'vuelidate/lib/validators'
 
 export default {
@@ -42,21 +41,21 @@ export default {
     }
   },
   methods: {
-    async login() {
-      let result = await database.signUp(this.email, this.password);
+    // async login() {
+    //   let result = await database.signUp(this.email, this.password);
 
-      if (result.message) {
-        this.$toasted.show(`Error: Wrong email or password`, { 
-          theme: "bubble", 
-          position: "top-right", 
-          duration: 5000,
-          icon: 'markunread_mailbox',
-          fullWidth: 'true'
-        });
-      } else {
-        router.push("admin");
-      }
-    }
+    //   if (result.message) {
+    //     this.$toasted.show(`Error: Wrong email or password`, { 
+    //       theme: "bubble", 
+    //       position: "top-right", 
+    //       duration: 5000,
+    //       icon: 'markunread_mailbox',
+    //       fullWidth: 'true'
+    //     });
+    //   } else {
+    //     router.push("admin");
+    //   }
+    // }
   }
 
 }

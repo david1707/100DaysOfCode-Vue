@@ -14,7 +14,7 @@ import AdminEvent from './views/admin/AdminEvent.vue'
 import AdminPets from './views/admin/AdminPets.vue'
 import AdminBlog from './views/admin/AdminBlog.vue'
 
-import firebase from './firebase/init'
+import firebase from './firebase/firebaseConfig'
 
 Vue.use(Router)
 
@@ -81,15 +81,15 @@ export default new Router({
       path: '/admin/events',
       name: 'admin-events',
       component: AdminEvent,
-      beforeEnter: (to, from, next) => {
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            next()
-          } else {
-            next(false);
-          }
-        })
-      }
+      // beforeEnter: (to, from, next) => {
+      //   firebase.auth().onAuthStateChanged(function(user) {
+      //     if (user) {
+      //       next()
+      //     } else {
+      //       next(false);
+      //     }
+      //   })
+      // }
     },
     {
       path: '/admin/pets',
