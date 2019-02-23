@@ -68,15 +68,15 @@ export default new Router({
       path: '/admin',
       name: 'admin',
       component: Admin,
-      beforeEnter: (to, from, next) => {
-        firebase.auth().onAuthStateChanged(function(user) {
-          if (user) {
-            next()
-          } else {
-            next(false);
-          }
-        })
-      }
+      // beforeEnter: (to, from, next) => {
+      //   firebase.auth().onAuthStateChanged(function(user) {
+      //     if (user) {
+      //       next()
+      //     } else {
+      //       next(false);
+      //     }
+      //   })
+      // }
     },
     {
       path: '/admin/events',

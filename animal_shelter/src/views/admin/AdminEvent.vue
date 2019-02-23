@@ -20,7 +20,7 @@
 						<td>{{ event.hour }}</td>
 						<td class="actions">
 							<router-link :to="{ name: 'admin-events-single', params: { event_id: event.id }}"><i class="material-icons view">visibility</i></router-link>
-							<i class="material-icons delete">delete</i>
+							<i class="material-icons delete" @click="removeEvent(event.id)">delete</i>
 						</td>
 						<!-- 
 						Add this one on the individual view 	
@@ -48,7 +48,14 @@ export default {
 		db.collection('events').get()
 			.then(snapshot => {
 				snapshot.forEach(doc => {
-					let date = new Date(doc.data().date['seconds'] * 1000);
+					let date;
+					try{
+						date = new Date(doc.data().date['seconds'] * 10020);
+					}
+					catch {
+						date = new Date()
+					}
+
 					const data = {
 						'id': doc.id,
 						'location': doc.data().location,
@@ -59,6 +66,16 @@ export default {
 					this.events.push(data);
 				})
 			});
+	},
+	methods: {
+		removeEvent(event_id) {
+			if(confirm('Are you sure you want to remove this event?')) {
+				db.collection('events').doc(event_id).delete();
+
+				const position_remove = this.events.findIndex(element => element.id == event_id);
+				this.events.splice(position_remove, 1);
+			}
+		}
 	}
 }
 </script>

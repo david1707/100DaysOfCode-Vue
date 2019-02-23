@@ -3,6 +3,7 @@
 - The EventSingleView works as View, Update and Delete all in one
 
 ### TODO
+- Date + Time picker
 - Add Create, Update and Delete on Events functionality
 - Login + Guard
 - Add all CRUD operations to Pets and Blog
