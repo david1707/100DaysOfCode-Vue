@@ -40,7 +40,7 @@
 						type="submit"
 						name="action"
 						:disabled="$v.$invalid"
-						@click.prevent="send">Submit
+						@click.prevent="send()">Submit
 						<i class="material-icons right">send</i>
 					</button>
 				</div>
@@ -67,6 +67,22 @@ export default {
 			text: String,
 		}
 	},
+	methods: {
+		send(){
+			db.collection("events").doc(this.event_id).set({
+				location: this.location,
+				date: new Date(this.date + ' ' + this.hour),
+				title: this.title,
+				text: this.text
+			})
+			.then(function() {
+				console.log("Document successfully written!");
+			})
+			.catch(function(error) {
+				console.error("Error writing document: ", error);
+			});
+		}
+	},
 	// components: {
 	// 	vuejsDatepicker: Datepicker,
 	// },
@@ -83,7 +99,7 @@ export default {
 		},
 		hour: {
 			required,
-			minLength: minLength(5),
+			minLength: minLength(4),
 			maxLength: maxLength(5),
 		},
 		title: {
@@ -102,7 +118,7 @@ export default {
 			.then(snapshot => {
 				next(vm => {
 					let date = new Date(snapshot.data().date['seconds'] * 1000);
-					vm.event_id = snapshot.data().event_id,
+					vm.event_id = snapshot.id,
 					vm.location = snapshot.data().location,
 					vm.date = date.toDateString(),
 					vm.hour = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),

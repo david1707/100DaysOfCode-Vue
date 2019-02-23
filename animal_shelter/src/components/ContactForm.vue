@@ -91,7 +91,6 @@ export default {
     send() {
       let d = new Date(this.birthdate);
       let date_birthdate = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`
-      console.log(`Email sent:\n${this.first_name} ${this.last_name} born in ${date_birthdate} requested help about how to volunteer.\nComments: ${this.comments}\nContact at: ${this.email}`)
       this.$toasted.show(`Thanks ${this.first_name} ${this.last_name}! We will contact you at ${this.email}!`, { 
         theme: "bubble", 
         position: "top-right", 

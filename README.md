@@ -1,12 +1,15 @@
 ### Day 66-67
 - Added the EventSingle view, fetching the data from Firebase
 - The EventSingleView works as View, Update and Delete all in one
+- Added RemoveEvent on EventView
 
 ### TODO
-- Date + Time picker
-- Add Create, Update and Delete on Events functionality
-- Login + Guard
+- Event: Show error if can't update and change route if was updated
+- Count events on Admin and display it
 - Add all CRUD operations to Pets and Blog
+- Date + Time picker
+- Login + Guard
+- Confine the 'admin' trick from to outside the Admin section
 - Fix navbar for mobile phones
 - Modify CSS Grid on affiliated for mobile phones
 - Add images
