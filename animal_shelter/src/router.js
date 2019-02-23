@@ -11,6 +11,7 @@ import HelpUs from './views/HelpUs.vue'
 import Volunteering from './views/Volunteering.vue'
 
 import AdminEvent from './views/admin/AdminEvent.vue'
+import AdminEventSingle from './views/admin/AdminEventSingle.vue'
 import AdminPets from './views/admin/AdminPets.vue'
 import AdminBlog from './views/admin/AdminBlog.vue'
 
@@ -81,6 +82,20 @@ export default new Router({
       path: '/admin/events',
       name: 'admin-events',
       component: AdminEvent,
+      // beforeEnter: (to, from, next) => {
+      //   firebase.auth().onAuthStateChanged(function(user) {
+      //     if (user) {
+      //       next()
+      //     } else {
+      //       next(false);
+      //     }
+      //   })
+      // }
+    },
+    {
+      path: '/admin/events/:event_id',
+      name: 'admin-events-single',
+      component: AdminEventSingle,
       // beforeEnter: (to, from, next) => {
       //   firebase.auth().onAuthStateChanged(function(user) {
       //     if (user) {

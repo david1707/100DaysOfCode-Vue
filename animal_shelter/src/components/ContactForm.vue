@@ -35,14 +35,14 @@
         </div>
         </div>
         <div class="row">
-        <button 
-            class="btn waves-effect waves-light col s10 offset-s1"
-            type="submit"
-            name="action"
-            :disabled="$v.$invalid"
-            @click.prevent="send">Submit
-            <i class="material-icons right">send</i>
-        </button>
+          <button 
+              class="btn waves-effect waves-light col s10 offset-s1"
+              type="submit"
+              name="action"
+              :disabled="$v.$invalid"
+              @click.prevent="send">Submit
+              <i class="material-icons right">send</i>
+          </button>
         </div>
     </form>
   </div>
@@ -50,7 +50,7 @@
 
 <script>
 import Datepicker from 'vuejs-datepicker';
-import { required, minLength } from 'vuelidate/lib/validators'
+import { required, minLength, maxLength, email } from 'vuelidate/lib/validators'
 
 export default {
   name: 'contact-form',
@@ -67,20 +67,24 @@ export default {
     pre_comment: String,
   },
   components: {
-    vuejsDatepicker: Datepicker
+    vuejsDatepicker: Datepicker,
   },
   validations: {
     first_name: {
       required,
-      minLength: minLength(2)
+      minLength: minLength(2),
+      maxLength: maxLength(30),
     },
     last_name: {
       required,
-      minLength: minLength(2)
+      minLength: minLength(2),
+      maxLength: maxLength(30),
     },
     email: {
       required,
-      minLength: minLength(10)
+      email,
+      minLength: minLength(10),
+      maxLength: maxLength(50),
     }
   },
   methods: {

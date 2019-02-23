@@ -18,7 +18,15 @@
 						<td>{{ event.location }}</td>
 						<td>{{ event.date }}</td>
 						<td>{{ event.hour }}</td>
-						<td class="actions"><i class="material-icons view">visibility</i><i class="material-icons edit">edit</i><i class="material-icons delete">delete</i></td>
+						<td class="actions">
+							<router-link :to="{ name: 'admin-events-single', params: { event_id: event.id }}"><i class="material-icons view">visibility</i></router-link>
+							<i class="material-icons delete">delete</i>
+						</td>
+						<!-- 
+						Add this one on the individual view 	
+						<i class="material-icons edit">edit</i> 
+						<i class="material-icons delete">delete</i>
+						-->
 					</tr>
 				</tbody>
 			</table>
