@@ -74,9 +74,5 @@ export default {
     color: red;
   }
 
-  .toasted.bubble {
-    background-color: #2bbbad !important;
-  }
-
 </style>
 

@@ -50,7 +50,7 @@ export default {
 				snapshot.forEach(doc => {
 					let date;
 					try{
-						date = new Date(doc.data().date['seconds'] * 10020);
+						date = new Date(doc.data().date['seconds'] * 1000);
 					}
 					catch {
 						date = new Date()

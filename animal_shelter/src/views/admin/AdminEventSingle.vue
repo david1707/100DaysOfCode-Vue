@@ -52,8 +52,9 @@
 
 <script>
 import db from '../../firebase/firebaseInit'
-import Datepicker from 'vuejs-datepicker';
+// import Datepicker from 'vuejs-datepicker';
 import { required, minLength, maxLength } from 'vuelidate/lib/validators'
+import router from '@/router.js'
 
 export default {
 	name: 'admin-events-single',
@@ -76,7 +77,7 @@ export default {
 				text: this.text
 			})
 			.then(function() {
-				console.log("Document successfully written!");
+				router.push({ name: 'admin-events' })
 			})
 			.catch(function(error) {
 				console.error("Error writing document: ", error);
