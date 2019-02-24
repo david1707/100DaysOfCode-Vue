@@ -2,10 +2,12 @@
 - Fixed small bug on datetime
 - On AdminEventSingle save, go back to AdminEvent
 - Admin display real set of Events, Pets, Entries and modifies its class depending the number of events
+- Added Datepicker to AdminEventSingle
 
 ### TODO
+- Add one image to Event?
+- Display all events at the website Event.vue component
 - Add all CRUD operations to Pets and Blog
-- Date + Time picker
 - Login + Guard
 - Confine the 'admin' trick from to outside the Admin section
 - Fix navbar for mobile phones

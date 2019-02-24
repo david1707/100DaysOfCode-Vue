@@ -52,7 +52,6 @@
 
 <script>
 import db from '../../firebase/firebaseInit'
-// import Datepicker from 'vuejs-datepicker';
 import { required, minLength, maxLength } from 'vuelidate/lib/validators'
 import router from '@/router.js'
 
@@ -84,9 +83,6 @@ export default {
 			});
 		}
 	},
-	// components: {
-	// 	vuejsDatepicker: Datepicker,
-	// },
 	validations: {
 		location: {
 			required,
