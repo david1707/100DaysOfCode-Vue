@@ -1,9 +1,9 @@
 ### Day 68
 - Fixed small bug on datetime
 - On AdminEventSingle save, go back to AdminEvent
+- Admin display real set of Events, Pets, Entries and modifies its class depending the number of events
 
 ### TODO
-- Count events on Admin and display it
 - Add all CRUD operations to Pets and Blog
 - Date + Time picker
 - Login + Guard

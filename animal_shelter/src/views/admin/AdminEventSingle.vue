@@ -77,7 +77,7 @@ export default {
 				text: this.text
 			})
 			.then(function() {
-				router.push({ name: 'admin-events' })
+				router.push({ path: 'admin-events' })
 			})
 			.catch(function(error) {
 				console.error("Error writing document: ", error);
