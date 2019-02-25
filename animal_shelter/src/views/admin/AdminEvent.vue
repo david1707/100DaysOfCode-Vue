@@ -26,7 +26,7 @@
 
 				</tbody>
 			</table>
-			<div class="row mt-4">
+			<div class="row">
 				<button 
 					class="btn waves-effect waves-light col s10 offset-s1"
 					type="submit"
@@ -101,6 +101,10 @@ export default {
         .delete {
             color: orangered;
         }
+
+		.row {
+			margin-top: 1rem;
+		}
 
     }
 

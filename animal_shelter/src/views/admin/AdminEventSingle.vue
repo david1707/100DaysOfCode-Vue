@@ -37,7 +37,7 @@
 				<div class="input-field col s6" :class="{ invalid_value: $v.image_link.$error }">
 					<i class="material-icons prefix">add_photo_alternate</i>
 					<input id="image_link" type="text" class="validate" @blur="$v.image_link.$touch()" v-model="image_link">
-					<label for="image_link" class="active">Text</label>
+					<label for="image_link" class="active">Image</label>
 					<img id="image_link" :src="image_link" alt="">
 					<p v-if="$v.image_link.$error"><i> Please, provide a valid url</i></p>
 				</div>
