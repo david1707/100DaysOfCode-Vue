@@ -1,7 +1,7 @@
 <template>
   <div class="help-us">
     <div>
-      <img src="https://www.bettercitiesforpets.com/wp-content/uploads/2017/08/pets-in-classroom-header.jpg" class="full-image" alt="">
+      <img src="https://www.bettercitiesforpets.com/wp-content/uploads/2017/08/pets-in-classroom-header.jpg" class="full-image responsive-img" alt="">
     </div>
 
     <!-- Container -->
@@ -43,7 +43,7 @@
     </div><!-- ./Container -->
 
     <div class="row">
-      <img class="full-image" src="https://i.pinimg.com/originals/bb/27/44/bb27447dd4bc561b2f3bdd2dbb777a95.jpg" alt="">
+      <img class="full-image responsive-img" src="https://i.pinimg.com/originals/bb/27/44/bb27447dd4bc561b2f3bdd2dbb777a95.jpg" alt="">
     </div>
 
     <!-- Container -->

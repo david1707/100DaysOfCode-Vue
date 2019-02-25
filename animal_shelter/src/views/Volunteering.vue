@@ -1,7 +1,7 @@
 <template>
   <div class="volunteering">
     <div>
-      <img class="full-image" src="https://c.pxhere.com/photos/d7/d9/dogs_kids_children_seecanyon-242466.jpg!d" alt="">
+      <img class="full-image responsive-img" src="https://c.pxhere.com/photos/d7/d9/dogs_kids_children_seecanyon-242466.jpg!d" alt="">
     </div>
     <!-- First block of text -->
     <div class="container">
@@ -25,7 +25,7 @@
       </div>
     </div><!-- ./First block of text -->
 
-    <img class="full-image" src="https://c.pxhere.com/photos/0f/1f/cat_thai_cat_cats_pet_animals_cute_cat_s_eye_cat_eyes-703574.jpg!d" alt="">
+    <img class="full-image responsive-img" src="https://c.pxhere.com/photos/0f/1f/cat_thai_cat_cats_pet_animals_cute_cat_s_eye_cat_eyes-703574.jpg!d" alt="">
 
     <div class="container">
       <div class="row">

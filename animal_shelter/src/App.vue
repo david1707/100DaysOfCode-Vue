@@ -58,7 +58,7 @@ export default {
   }
 
   .full-image {
-    height: 100vh;
-    width: 98.96vw;
+    height: 100%;
+    width: 100%;
   }
 </style>

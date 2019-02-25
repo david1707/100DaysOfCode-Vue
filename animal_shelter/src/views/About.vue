@@ -1,7 +1,7 @@
 <template>
   <div class="about-us">
     <div>
-      <img class="full-image" src="https://c.pxhere.com/photos/74/ea/greece_dog_sleep_tired_hot_santorini-1021532.jpg!d" alt="">
+      <img class="full-image responsive-img" src="https://c.pxhere.com/photos/74/ea/greece_dog_sleep_tired_hot_santorini-1021532.jpg!d" alt="">
     </div>
     <div class="container">
       <!-- What we do -->

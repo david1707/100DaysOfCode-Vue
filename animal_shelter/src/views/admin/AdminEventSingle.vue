@@ -1,7 +1,7 @@
 <template >
 	<div class="admin-event-single">
 		<div class="container">
-			<h2 class="center">Manage event {{ event_id }}</h2>
+			<h2 class="center">Edit event </h2>
 			<form class="col s12" >
 
 				<div class="input-field col s6" :class="{ invalid_value: $v.location.$error }">
@@ -34,6 +34,13 @@
 					<label for="text" class="active">Text</label>
 					<p v-if="$v.text.$error"><i> Please, provide a valid text</i></p>
 				</div>
+				<div class="input-field col s6" :class="{ invalid_value: $v.image_link.$error }">
+					<i class="material-icons prefix">add_photo_alternate</i>
+					<input id="image_link" type="text" class="validate" @blur="$v.image_link.$touch()" v-model="image_link">
+					<label for="image_link" class="active">Text</label>
+					<img id="image_link" :src="image_link" alt="">
+					<p v-if="$v.image_link.$error"><i> Please, provide a valid url</i></p>
+				</div>
 				<div class="row">
 					<button 
 						class="btn waves-effect waves-light col s10 offset-s1"
@@ -52,7 +59,7 @@
 
 <script>
 import db from '../../firebase/firebaseInit'
-import { required, minLength, maxLength } from 'vuelidate/lib/validators'
+import { required, minLength, maxLength, url } from 'vuelidate/lib/validators'
 import router from '@/router.js'
 
 export default {
@@ -65,6 +72,7 @@ export default {
 			hour: String,
 			title: String,
 			text: String,
+			image_link: String,
 		}
 	},
 	methods: {
@@ -73,7 +81,8 @@ export default {
 				location: this.location,
 				date: new Date(this.date + ' ' + this.hour),
 				title: this.title,
-				text: this.text
+				text: this.text,
+				image_link: this.image_link
 			})
 			.then(function() {
 				router.push({ name: 'admin-events' })
@@ -109,6 +118,10 @@ export default {
 			minLength: minLength(10),
 			maxLength: maxLength(500),
 		},
+		image_link: {
+			maxLength: maxLength(200),
+			url,
+		}
 	},
 	beforeRouteEnter(to, from, next) {
 		db.collection('events').doc(to.params.event_id).get()
@@ -120,7 +133,8 @@ export default {
 					vm.date = date.toDateString(),
 					vm.hour = date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
 					vm.title = snapshot.data().title,
-					vm.text = snapshot.data().text
+					vm.text = snapshot.data().text,
+					vm.image_link = snapshot.data().image_link
 				})
 			})
 	},
@@ -134,6 +148,10 @@ export default {
 
 	.invalid_value, .invalid_value label {
 		color: red;
+	}
+
+	img#image_link {
+		width: 100%;
 	}
 
 </style>

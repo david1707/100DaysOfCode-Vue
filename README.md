@@ -1,11 +1,8 @@
-### Day 68
-- Fixed small bug on datetime
-- On AdminEventSingle save, go back to AdminEvent
-- Admin display real set of Events, Pets, Entries and modifies its class depending the number of events
-- Added Datepicker to AdminEventSingle
+### Day 69
+- Added images to Event document as a link (Firestore is capped to 1MB images) and display them on form
+- Fixed images size!
 
 ### TODO
-- Add one image to Event?
 - Display all events at the website Event.vue component
 - Add all CRUD operations to Pets and Blog
 - Login + Guard
@@ -13,6 +10,9 @@
 - Fix navbar for mobile phones
 - Modify CSS Grid on affiliated for mobile phones
 - Add images
+
+### Possibles TODOs (If time allows )
+- Add GoogleMaps to each event and GoogleMaps picker to get LatLong on form creation
 
 ### 
 How to use Firebase and Firestore:
