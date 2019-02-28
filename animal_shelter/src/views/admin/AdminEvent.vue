@@ -41,7 +41,63 @@
 			</div>
 		
 			<modal v-if="showModal" @close="closeModal">
-					<h2 slot="header">Açò és un destarifo</h2>
+					<h2 slot="header">Create a new event</h2>
+
+					<div slot="body">
+							<form class="col s12" >
+
+								<div class="input-field col s6" :class="{ invalid_value: $v.location.$error }">
+									<i class="material-icons prefix">location_on</i>
+									<input id="location" type="text" class="validate" @blur="$v.location.$touch()" v-model="location">
+									<label for="location" class="active">Location</label>
+									<p v-if="$v.location.$error"><i> Please, provide a valid location</i></p>
+								</div>
+								<div class="input-field col s6" :class="{ invalid_value: $v.date.$error }">
+									<i class="material-icons prefix">date_range</i>
+									<input id="date" type="text" class="validate" @blur="$v.date.$touch()" v-model="date">
+									<label for="date" class="active">Date</label>
+									<p v-if="$v.date.$error"><i> Please, provide a valid date</i></p>
+								</div>
+								<div class="input-field col s6" :class="{ invalid_value: $v.hour.$error }">
+									<i class="material-icons prefix">access_time</i>
+									<input id="hour" type="text" class="validate" @blur="$v.hour.$touch()" v-model="hour">
+									<label for="hour" class="active">hour</label>
+									<p v-if="$v.hour.$error"><i> Please, provide a valid hour</i></p>
+								</div>
+								<div class="input-field col s6" :class="{ invalid_value: $v.title.$error }">
+									<i class="material-icons prefix">announcement</i>
+									<input id="title" type="text" class="validate" @blur="$v.title.$touch()" v-model="title">
+									<label for="title" class="active">Title</label>
+									<p v-if="$v.title.$error"><i> Please, provide a valid title</i></p>
+								</div>
+								<div class="input-field col s6" :class="{ invalid_value: $v.text.$error }">
+									<i class="material-icons prefix">assignment</i>
+									<textarea id="text" type="text" class="validate" @blur="$v.text.$touch()" v-model="text" rows="8" cols="50"></textarea>
+									<label for="text" class="active">Text</label>
+									<p v-if="$v.text.$error"><i> Please, provide a valid text</i></p>
+								</div>
+								<div class="input-field col s6" :class="{ invalid_value: $v.image_link.$error }">
+									<i class="material-icons prefix">add_photo_alternate</i>
+									<input id="image_link" type="text" class="validate" @blur="$v.image_link.$touch()" v-model="image_link">
+									<label for="image_link" class="active">Image</label>
+									<img id="image_link" :src="image_link" alt="">
+									<p v-if="$v.image_link.$error"><i> Please, provide a valid url</i></p>
+								</div>
+
+						</form>
+					</div>
+
+					<div slot="footer">
+						<button 
+							class="btn waves-effect waves-light col s10 offset-s1"
+							type="submit"
+							name="action"
+							:disabled="$v.$invalid"
+							@click.prevent="send()">Submit
+							<i class="material-icons right">send</i>
+						</button>
+					</div>
+					
 			</modal>
 
 		</div>

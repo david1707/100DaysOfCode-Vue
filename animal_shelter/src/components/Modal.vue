@@ -3,7 +3,7 @@
     <div class="modal-backdrop">
       <div class="modal">
 
-        <header class="modal-header">
+        <header class="modal-header center">
           <slot name="header"> 
             Default title 
 
