@@ -1,7 +1,8 @@
 ### Day 72
+- Modal added with slots. Need to add Vuelidate and functionality
+
 
 ### TODO
-- Add Modal on createEvent -> https://vuejs.org/v2/examples/modal.html
 - Add WYSIWYG to Events text
 - Add all CRUD operations to Pets and Blog
 - Login + Guard
