@@ -30,10 +30,10 @@ import db from '../firebase/firebaseInit'
 
 export default {
   name: 'events',
-  	data() {
-		return {
-			events: [],
-		}
+  data() {
+  return {
+    events: [],
+  }
 	},
 	created() {
 		db.collection('events').get()

@@ -1,7 +1,4 @@
-### Day 69
-- Added images to Event document as a link (Firestore is capped to 1MB images) and display them on form
-- Fixed images size!
-- Display all events at the website Event.vue component
+### Day 72
 
 ### TODO
 - Add Modal on createEvent -> https://vuejs.org/v2/examples/modal.html
