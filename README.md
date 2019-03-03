@@ -1,11 +1,13 @@
-### Day 72
-- Modal added with slots. Need to add Vuelidate and functionality
-
+### Day 75
+- Added creation of new Events
 
 ### TODO
+- Close the modal after saving https://stackoverflow.com/questions/44745890/calling-a-javascript-function-inside-a-vue-component-file
+- Add login. On log in, turn the 'isUserLogged' (instead of 'currentUser') to true.
+- Send to the login page only if you are not logged
+- Login + Guard routes in a proper way
 - Add WYSIWYG to Events text
 - Add all CRUD operations to Pets and Blog
-- Login + Guard
 - Confine the 'admin' trick from to outside the Admin section
 - Fix navbar for mobile phones
 - Modify CSS Grid on affiliated for mobile phones

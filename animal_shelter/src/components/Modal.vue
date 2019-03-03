@@ -7,7 +7,6 @@
           <slot name="header"> 
             Default title 
 
-            <button type="button" class="btn-close" @click="close">X</button>
           </slot>
         </header>
 
@@ -19,7 +18,6 @@
           <slot name="footer">
             I am the default footer!
 
-            <button type="button" class="btn-green" @click="close"> Close me</button>
           </slot>
         </footer>
       </div>
@@ -28,15 +26,9 @@
 </template>
 
 <script>
+
 export default {
   name: 'modal',
-
-  methods: {
-    close() {
-      this.$emit('close');
-    },
-  },
-
 }
 </script>
 
@@ -54,6 +46,8 @@ export default {
   }
 
   .modal {
+    height: 60%;
+    padding: 2em;
     background: #FFFFFF;
     box-shadow: 2px 2px 20px 1px;
     overflow-x: auto;

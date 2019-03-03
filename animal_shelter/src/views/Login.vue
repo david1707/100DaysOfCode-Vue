@@ -53,7 +53,8 @@ export default {
     //       fullWidth: 'true'
     //     });
     //   } else {
-    //     router.push("admin");
+    //     console.log(result)
+    //     // router.push("admin");
     //   }
     // }
   }

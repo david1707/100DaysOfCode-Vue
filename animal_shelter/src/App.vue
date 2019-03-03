@@ -34,7 +34,7 @@ window.addEventListener("keypress", function(e) {
 
     phrase.push(e.key);
     if (phrase.join('') == "admin") {
-      router.push( "login" );
+      router.push({name: "login" });
     }
 });
 

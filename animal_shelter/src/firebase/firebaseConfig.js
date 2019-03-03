@@ -6,19 +6,3 @@ export default {
   storageBucket: "animal-shelter-1549664512607.appspot.com",
   messagingSenderId: "747865282915"
 };
-
-// const database = firebase.initializeApp(config);
-
-// export default database;
-
-// database.signUp = async (email, password) => {
-//   try {
-//     await firebase.auth().signInWithEmailAndPassword(email, password);
-//     store.commit('setCurrentUser', firebase.auth().currentUser);
-
-//     return true;
-//   }
-//   catch (error) {
-//     return error;
-//   }
-// }
