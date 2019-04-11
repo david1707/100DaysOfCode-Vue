@@ -1,28 +1,11 @@
-### Day 75
-- Added creation of new Events
+### Day 79
 
-### TODO
-- Close the modal after saving https://stackoverflow.com/questions/44745890/calling-a-javascript-function-inside-a-vue-component-file
-- Add login. On log in, turn the 'isUserLogged' (instead of 'currentUser') to true.
-- Send to the login page only if you are not logged
-- Login + Guard routes in a proper way
-- Add WYSIWYG to Events text
-- Add all CRUD operations to Pets and Blog
-- Confine the 'admin' trick from to outside the Admin section
-- Fix navbar for mobile phones
-- Modify CSS Grid on affiliated for mobile phones
-- Add images
+New project: Vue_api
 
-### Possibles TODOs (If time allows )
-- Add GoogleMaps to each event and GoogleMaps picker to get LatLong on form creation
+Started this new Vue project to learn how to properly intertwine Vue, Vuex and API calls.
 
-### 
-How to use Firebase and Firestore:
-https://www.youtube.com/watch?v=cjEzK4me1k8
+On components, I'll use Vuex Actions to perform calls to an API with axios, then store the data on Vuex via Mutations.
 
+Right now, I'm fetching data from an API via Axios as a service, and store it into a component variable.
 
-Firebase query functions:
-https://firebase.google.com/docs/reference/js/firebase.database.Query
-
-How auth works:
-https://vuehero.com/lessons/how-to-authenticate-users-with-vuejs-and-firebase/
+Next steps will be to move that logit to Vuex, so Vuex will fetch the data via action, and store the received data into the state via mutations
