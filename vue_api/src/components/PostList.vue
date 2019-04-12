@@ -1,39 +1,63 @@
 <template>
 	<div>
-    <h1>Your posts:</h1>
+		<div class="header">
+			<h1>YOUR_COMPANY_NAME Posts Manager</h1>
+			<h4>Filter by:</h4>
+			<input type="text" class="filter" v-model="filterText">
+			<h1>Your posts:</h1>
+		</div>
     <div class="container">
-			<div v-for="post in posts" :key="post.id" class="post" :class="post.state == 'approved' ? 'postApproved' : 'postPending'">
-				<h4>{{ post.title }}</h4>
-				<p>{{ post.body }}</p>
+			<div
+				v-for="post in posts" 
+				:key="post.id"
+				class="post"
+				:class="post.state == 'approved' ? 'postApproved' : 'postPending'"
+				v-on:dblclick="TOGGLE_POST_STATE(post.id)">
+					<h4>{{ post.title }}</h4>
+					<p>{{ post.body }}</p>
 			</div>
     </div>
 	</div>
 </template>
 
 <script>
-import API from '@/APIService'
+import { mapGetters, mapActions, mapMutations } from 'vuex'
 
 export default {
 	name: 'postList',
 	data() {
 		return {
-			posts: [],
+			filterText: ''
+		}
+	},
+	computed: {
+		...mapGetters(['getPosts']),
+
+		posts: function() {	
+			return this.getPosts.filter(post => post.title.includes(this.filterText) || post.body.includes(this.filterText))
 		}
 	},
 	methods: {
-		fetchPosts() {
-			API.getPosts()
-				.then(data => this.posts = data)
-		}
+		...mapActions(['GET_POSTS']),
+		...mapMutations(['TOGGLE_POST_STATE']),
+
 	},
 	created() {
-		this.fetchPosts()
+		this.GET_POSTS()
 	},
     
 }
 </script>
 
 <style lang="scss" scoped>
+	.header {
+		.filter {
+			width: 100%;
+			height: 1.75em;
+			border-radius: 25px;
+			text-align: center;
+		}
+	}
 	.container {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;

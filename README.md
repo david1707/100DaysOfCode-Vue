@@ -1,11 +1,7 @@
-### Day 79
+### Day 80
 
-New project: Vue_api
+Instead of fetching the data from an API to store the result into a computed variable, now it is stored in Vuex.
 
-Started this new Vue project to learn how to properly intertwine Vue, Vuex and API calls.
+Added functionality to change from "Post approved" to "Post pending" and vice-versa on double click
 
-On components, I'll use Vuex Actions to perform calls to an API with axios, then store the data on Vuex via Mutations.
-
-Right now, I'm fetching data from an API via Axios as a service, and store it into a component variable.
-
-Next steps will be to move that logit to Vuex, so Vuex will fetch the data via action, and store the received data into the state via mutations
+Added search: Type a text in the input and it will show the posts containing that text in the title or body
