@@ -25,7 +25,6 @@ export default new Vuex.Store({
       state.posts = posts;
     },
     TOGGLE_POST_STATE(state, id) {
-      
       state.posts[id-1].state == 'approved' ?
         state.posts[id-1].state = 'pending' :
         state.posts[id-1].state = 'approved';

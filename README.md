@@ -1,7 +1,5 @@
-### Day 80
+### Day 81
 
-Instead of fetching the data from an API to store the result into a computed variable, now it is stored in Vuex.
+Moved the Post info into a Post.vue component
 
-Added functionality to change from "Post approved" to "Post pending" and vice-versa on double click
-
-Added search: Type a text in the input and it will show the posts containing that text in the title or body
+Added open modal on post click with a form to edit each post with SweetModal (https://sweet-modal-vue.adepto.as/)

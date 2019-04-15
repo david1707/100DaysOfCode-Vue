@@ -7,15 +7,12 @@
 			<h1>Your posts:</h1>
 		</div>
     <div class="container">
-			<div
-				v-for="post in posts" 
+			<Post
+				v-for="post in posts"
+				:post="post"
 				:key="post.id"
 				class="post"
-				:class="post.state == 'approved' ? 'postApproved' : 'postPending'"
-				v-on:dblclick="TOGGLE_POST_STATE(post.id)">
-					<h4>{{ post.title }}</h4>
-					<p>{{ post.body }}</p>
-			</div>
+				:class="post.state == 'approved' ? 'postApproved' : 'postPending'" />			
     </div>
 	</div>
 </template>
@@ -23,12 +20,17 @@
 <script>
 import { mapGetters, mapActions, mapMutations } from 'vuex'
 
+import Post from './Post'
+
 export default {
 	name: 'postList',
 	data() {
 		return {
 			filterText: ''
 		}
+	},
+	components: {
+		Post,
 	},
 	computed: {
 		...mapGetters(['getPosts']),
@@ -39,7 +41,6 @@ export default {
 	},
 	methods: {
 		...mapActions(['GET_POSTS']),
-		...mapMutations(['TOGGLE_POST_STATE']),
 
 	},
 	created() {
