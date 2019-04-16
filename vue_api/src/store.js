@@ -28,6 +28,12 @@ export default new Vuex.Store({
       state.posts[id-1].state == 'approved' ?
         state.posts[id-1].state = 'pending' :
         state.posts[id-1].state = 'approved';
+    },
+    REMOVE_POST(state, id) {
+      const index = state.posts.findIndex(item => item.id == id)
+      console.log(index)
+      state.posts.splice(index, 1)
+
     }
   },
 })

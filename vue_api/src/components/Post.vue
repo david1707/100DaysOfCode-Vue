@@ -6,9 +6,10 @@
 			<p>{{ post.body }}</p>
 		</div>
 		<sweet-modal hide-close-button blocking ref="modal" id="modal">
+			<h1>Modify Post #{{post.id}}</h1>
 			<div>
 				<label for="id">Post ID</label>
-    		<input type="text" name="id" id="id" v-model="post.id">
+    		<input type="text" name="id" id="id" v-model="post.id" readonly>
 			</div>
 
 			<div>
@@ -29,13 +30,11 @@
 				</select> 
 			</div>
 			
-			<button v-on:click="closeModal()">Close</button>
-			<button v-on:click="savePost()">Save</button>
+			<button v-on:click="closePost()" class="save">Save</button>
+			<button v-on:click="removePost(post.id)" class="delete">Delete</button>
 		</sweet-modal>
 	</div>
 </template>
-
-<!-- v-on:dblclick="TOGGLE_POST_STATE(post.id)" -->
 
 <script>
 import { mapMutations } from 'vuex'
@@ -57,23 +56,26 @@ export default {
 		post: Object,
 	},
 	methods: {
-		...mapMutations(['TOGGLE_POST_STATE']),
+		...mapMutations(['TOGGLE_POST_STATE', 'REMOVE_POST']),
 
 		openModal() {
 			this.$refs.modal.open()
 		},
-		closeModal() {
+		closePost() {
 			this.$refs.modal.close()
 		},
-		// TODO Finish this method
-		savePost() {
-			console.log('POST SAVED')
+		removePost(id) {
+			this.REMOVE_POST(id);
+			this.closePost()
 		}
 	}
 }
 </script>
 
 <style lang="scss" scoped>
+	h1 {
+		color: black; 
+	}
 	label {
 		color: black !important;
 		float: left;
@@ -87,6 +89,27 @@ export default {
 	textarea {
 		width: 100%;	
 		border: .5px solid black;
+	}
+
+	input:focus,
+	select:focus,
+	textarea:focus {
+		background-color: rgb(241, 239, 239);
+		opacity: 0.9;
+	}
+
+	button {
+		width: 50%;
+		height: 2em;
+		margin-top: 1em;
+		color: white;
+	}
+
+	.save {
+		background-color: rgb(95, 95, 248);
+	}
+	.delete {
+		background-color: rgb(247, 68, 68);
 	}
 </style>
 
